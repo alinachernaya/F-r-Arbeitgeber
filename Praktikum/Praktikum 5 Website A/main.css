@@ -1,0 +1,446 @@
+
+
+body{
+    height: 100%;
+    font-family: "Barlow",sans-serif;
+    font-size: 18px;
+    color: #fff;
+    background-color: #191c1f;
+}
+
+
+.wrapper{
+    min-height: 100%;
+    overflow: clip; /* вміст, яке виходить за кордоги "батьківського" блоку, обрізається без прокрутки */
+    display: flex;
+    flex-direction: column;
+   
+    
+    
+}
+.wrapper > main{
+    flex: 1 1 auto;
+}
+[class*="_conteiner"] { /* задаємо інформацію всьому класу */
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+    max-width: 1140px;
+    color:white;
+    margin-top: -30px;                     /*!!!!!*/
+}
+
+
+.button { 
+    background-color: red;
+    padding-right: 22px;
+    border-radius: 40px;
+    padding: 20px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 125%; /* 20/16 */
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.button span{
+    padding-right: 22px;
+    background: url(./img/icons/arrow.svg) right;/*галочка справа на кнопці*/
+    background-repeat: no-repeat;
+    
+}
+.button:hover{
+    background-color: rgb(108, 6, 6);
+}
+a{
+    text-decoration:none;
+}
+
+.title{
+    font-size: 36px;
+    line-height: 111% /*40/36*/;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.label{
+    font-size: 16px;
+    line-height: 125%;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.header{
+    position: absolute; /* позиціонування ближче до екрану, інша інформація за ним(ПРИЛІПАЄ ДО ЕКРАНУ)*/
+    top: 40px;
+    left: 0;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    z-index: 50;
+}
+
+
+/*_____________________ перша частина з градієнтом_____________________*/
+.main-block{
+    padding-top:180px ;
+    padding-bottom: 180px;
+    background: url(./img/main-background.jpg) center  no-repeat;
+    width: 100%;
+    height: 100%;
+}
+.main-block::before{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient( to bottom, rgba(15, 14, 14, 0.05) 10%,#191c1f 27%);
+    content: '';
+    position: absolute;  
+    z-index: 1;
+}
+
+.main-block_body{
+    max-width: 746px;
+}
+
+.main-block_label{
+    line-height: 111%;/*20/18*/
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.main-block_title{
+    font-size: 64px;
+    line-height: 117%;/* 75/64*/
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.main-block_text{
+    font-size: 24px;
+    line-height: 125%;/* 30/24*/
+    font-weight: 300;
+    margin-bottom: 10px;
+    
+}
+.main-block_conteiner{
+    position: relative;
+    z-index: 2;
+}
+
+.page{
+    position: relative;
+}
+
+.page::before {
+    content: '';
+    position: absolute;  
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /*background-image: linear-gradient(to bottom, rgba(230, 229, 237, 0.05) 20%, #191c1f 100%);*/
+}
+@media (max-width: 992px) {
+    .main-block{
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    .main-block_title{
+        font-size: 54px;
+    }
+    .benefits_conteiner{ /*при зменшенні екрану контейнери гріду підуть з рядка в колонку*/
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(220px, 1fr));
+        gap: 30px;
+    }  
+
+    /*_____________________ друга частина про бенефіти_____________________*/
+}
+.benefits{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    
+}
+.benefits_conteiner{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+@media (max-width: 992px) {
+    .benefits_conteiner{ /*при зменшенні екрану контейнери гріду підуть з рядка в колонку*/
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(220px, 1fr));
+        gap: 30px;
+    }
+}
+
+.benefits_title,
+.item-benefit_title{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 111%;
+    z-index: 3;
+}
+.item-benefit{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 3;
+}
+.item-benefit_icon{
+    flex: 0 0 40px;
+}
+
+.item-benefit_icon img{
+    max-width: 100%;
+
+}
+.item-benefit_body{
+    flex: 1 1 auto;
+    
+}
+.item-benefit_text{
+    font-size: 20px;
+    line-height: 125%;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/*_____________________ третя  частина про фасиліті ______________________*/
+.trainning{
+    padding-top: 120px;
+    padding-bottom: 120px;
+    background-color: #1f2327;
+    text-transform: uppercase;
+    font-size: 15px;
+    z-index: 3;
+    position: relative;
+}
+.trainning_conteiner{
+    display: flex;
+    flex-direction: row-reverse;
+    z-index: 3;
+    position: relative;
+    align-items: center;
+    font-weight: 600;
+}
+.trainning_content{
+    flex: 0 1 50%;
+    padding-left: 123px;
+}
+.trainning_image{
+    flex: 0 1 50%;
+
+}
+.trainning_image img{ /*задаємо розмір картинки під час зменшення екрану
+    при зменшенню екрану картинка буде зменшуватись у розмірі*/
+    max-width: 100%;
+}
+
+li{
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    background: url(./img/icons/check.svg) 0 0px;
+    background-repeat: no-repeat;
+    margin-left: -35px;
+}
+.trainning_label{
+    margin-bottom: 10px;
+}
+.trainning_title{
+    margin-bottom: 30px;
+    max-width: 350px;
+}
+@media (max-width:1140px) {
+    .trainning_content{
+        padding-left: 60px; /*зміненя падингу при зменшенні екрану*/
+    }
+}
+@media (max-width:991.98px) {
+    .trainning{
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .trainning_content{
+        padding-left: 40px; /*зміненя падингу при зменшенні екрану*/
+    } 
+}
+@media (max-width:767.98px) {
+    .trainning{
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .trainning_conteiner{
+        flex-direction: column; /*при зменшенні екрану текст вгору, картинка під текст*/
+        align-items: stretch;   /*при зменшенні екрану текст над картинкою не посередині, 
+                                 а на початку зліва*/
+        gap: 30px;                         
+    }
+    .trainning_content{
+        padding-left: 10px; /*зміненя падингу при зменшенні екрану*/
+    }
+    .trainning_image{
+        text-align: center;
+    }
+}
+
+
+/*_____________________ четверта частина про лідера______________________*/ 
+.leader{
+    padding-top: 150px;
+    padding-bottom: 150px;
+
+}
+
+.leader_conteiner{
+    z-index: 3;
+    position: relative;
+    display: flex;
+    align-items: center; /* все, що в блоці - буде всередині блоку*/
+    
+}
+.leader_title{
+    max-width: 350px;
+}
+.leader_content{
+    flex: 0 1 50%; /* 50% при будь-якому розмірі екрану картинка буде 50%*/ 
+    padding-right: 125px;
+}
+.leader_image{
+    flex: 0 1 50%; /* 50% при будь-якому розмірі екрану картинка буде 50%*/ 
+}
+.leader_text{
+    line-height: 139%;
+}
+@media (max-width:1140px) {
+    .leader_content{
+        padding-right: 60px; /*зміненя падингу при зменшенні екрану*/
+    }
+}
+@media (max-width:991.98px) {
+    .leader{
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .leader_content{
+        padding-right: 30px; /*зміненя падингу при зменшенні екрану*/
+    } 
+}
+@media (max-width:767.98px) {
+    .leader_conteiner{
+        flex-direction: column; /*при зменшенні екрану текст вгору, картинка під текст*/
+        align-items: stretch;   /*при зменшенні екрану текст над картинкою не посередині, 
+                                 а на початку зліва*/
+    }
+    .leader_image{
+        text-align: center;
+    }
+}
+
+/*_____________________ п'ята  частина академі______________________*/
+.page_akademy{
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background: url(./img/academy.jpg);
+    background-repeat: no-repeat;
+    background-size: 110%;
+    background-position: center;
+    
+}
+.page_akademy::before{
+    content: '';
+    position: absolute;
+    min-width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(0deg, rgba(31, 30, 30, 0.45) 10%, rgba(25,28,31,1) 100%);
+    /*background-size: 115%;
+    /*(0deg, rgba(107,106,106,0.05) 20%, rgba(25,28,31,1) 100%);*/
+    /*(0deg, rgba(154,151,151,0.05) 0%, rgba(25,28,31,1) 100%);
+    /*(0deg, rgba(214,213,213,0.05) 0%, rgba(25,28,31,1) 100%);*/
+}
+
+a{
+    
+    color: #fff;
+}
+.akademy_conteiner{
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+}
+.akademy_body{
+    max-width: 747px;
+    margin: 0 auto;
+    
+}
+
+.akademy_label{
+    font-weight: 700;
+    line-height: 111%;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+.akademy_title{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 117%;
+}
+.akademy_text{
+    font-size: 24px;
+    line-height: 125%;
+}
+
+@media (max-width:991.98px) {
+    .akademy{
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .akademy_title{
+        font-size: 54px;
+    } 
+}
+@media (max-width:767.98px) {
+    .akademy{
+        padding-top: 60px;
+        padding-bottom: 60%;
+    }
+    
+}
+.footer_conteiner{
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 65px;
+}
+.footer_social{
+    display: flex;
+    flex-direction: row;
+}
+.social_item{
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    margin-left: 10px;
+
+}
